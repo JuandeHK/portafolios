@@ -576,7 +576,9 @@ h4 {
 }
 
 .hero__role {
-  font-size: 1.25rem;
+  font-size: clamp(0.85rem, calc((100vw - 2.5rem) / 20.5), 1.25rem);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
   color: var(--text-2);
   font-weight: 400;
 }
@@ -1453,17 +1455,17 @@ h4 {
     padding: 3rem 1.25rem;
   }
 
-  \n\n .project-case__images {
+  .project-case__images {
     grid-template-columns: 1fr;
   }
 
-  \n .project-case__img,
-  \n .project-case__img--cover {
+  .project-case__img,
+  .project-case__img--cover {
     height: 180px;
   }
 
   .hero {
-    padding-top: calc(var(--nav-h) + 2rem);
+    padding: calc(var(--nav-h) + 2rem) 1.5rem 3rem;
   }
 
   .hero__name {
@@ -1481,8 +1483,12 @@ h4 {
     padding: 3rem 1rem;
   }
 
+  .hero {
+    padding: calc(var(--nav-h) + 2rem) 1.2rem 3rem;
+  }
+
   .hero__name {
-    font-size: 1.9rem;
+    font-size: 1.75rem;
   }
 
   .hero__cta {
@@ -1492,6 +1498,8 @@ h4 {
   .hero__cta .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
   }
 
   .section__header {
