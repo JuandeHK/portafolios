@@ -1,430 +1,515 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juan de Dios HK — Portfolio</title>
+  <title>Portfolio - Juan de Dios Hernández Kakauridze</title>
   <meta name="description"
-    content="Portfolio de Juan de Dios Hernández Kakauridze — Ingeniero Informático especializado en Sistemas Inteligentes, IA aplicada y Desarrollo Full-Stack." />
+    content="Portfolio de Juan de Dios Hernández Kakauridze  Ingeniero Informático especializado en Sistemas Inteligentes, IA aplicada y Desarrollo Full-Stack." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Animated background blobs -->
-  <div class="blob blob--1"></div>
-  <div class="blob blob--2"></div>
-  <div class="blob blob--3"></div>
+
+  <!-- Gradientes de fondo -->
+  <div class="bg-gradient bg-gradient--1"></div>
+  <div class="bg-gradient bg-gradient--2"></div>
+  <div class="bg-gradient bg-gradient--3"></div>
 
   <!-- ==================== NAVBAR ==================== -->
-  <nav class="navbar" id="navbar">
-    <div class="navbar__inner">
-      <a href="#hero" class="navbar__logo">JdD<span class="accent-text">HK</span></a>
-
-      <ul class="navbar__links" id="navLinks">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#experience">Trayectoria</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-
-      <div style="display:flex;align-items:center;gap:0.5rem;">
-
-        <button id="navBurger" class="navbar__burger" aria-label="Menú">☰</button>
-      </div>
-    </div>
-  </nav>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="#hero" class="navbar__logo">
+        <span class="logo-mark">J</span><span class="logo-text">dD<span class="logo-accent">HK</span></span>
+      </a>
+    </nav>
+  </header>
 
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
-    <div class="hero__content reveal">
-      <div class="hero__photo-wrapper">
-        <img src="cosas/CARNET2.png" alt="Juan de Dios Hernández Kakauridze" class="hero__photo" width="180" height="180"
-          loading="eager" />
-      </div>
-      <h1 class="hero__name">Juan de Dios<br /><span class="accent-text">Hernández Kakauridze</span></h1>
-      <p class="hero__subtitle">Computer Engineer | Intelligent Systems & Full-Stack Development</p>
+    <div class="hero__container">
 
-      <div class="hero__links">
-        <a href="mailto:jddhernandezk@gmail.com" class="btn btn--primary">✉️ Contactar</a>
-        <a href="https://www.linkedin.com/in/juandedioshk/" target="_blank" rel="noopener" class="btn btn--outline">🔗
-          LinkedIn</a>
-        <a href="https://github.com/JuandeHK" target="_blank" rel="noopener" class="btn btn--outline">💻 GitHub</a>
+      <div class="hero__left">
+        <h1 class="hero__name reveal">
+          Juan de Dios
+          <span class="hero__name-mid">Hernández</span>
+          <span class="hero__name-accent">Kakauridze</span>
+        </h1>
+
+        <p class="hero__role reveal reveal-delay-1">
+          <span class="mono">// </span><span class="hero__role-text">Computer Engineer · AI &amp; Full-Stack</span>
+        </p>
+
+
+        <div class="hero__cta reveal reveal-delay-3">
+          <a href="#projects" class="btn btn--primary">
+            Ver proyectos
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/juandedioshk/" target="_blank" rel="noopener"
+            class="btn btn--ghost">LinkedIn</a>
+          <a href="https://github.com/JuandeHK" target="_blank" rel="noopener" class="btn btn--ghost">GitHub</a>
+        </div>
+
+        <div class="hero__stats reveal reveal-delay-4">
+          <div class="hero__stat">
+
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">1+</span>
+            <span class="hero__stat-label">Años exp.</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">2025</span>
+            <span class="hero__stat-label">Titulado UMU</span>
+          </div>
+        </div>
       </div>
 
-      <p class="hero__scroll-hint">↓ Descubre mis proyectos</p>
+      <div class="hero__right reveal reveal-delay-2">
+        <div class="hero__photo-frame">
+          <div class="hero__photo-glow"></div>
+          <img src="cosas/CARNET2.png" alt="Juan de Dios Hernández Kakauridze" class="hero__photo" width="380"
+            height="380" loading="eager" />
+
+          <div class="hero__photo-tag hero__photo-tag--br">
+            <span class="mono">Murcia · ES</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      <span class="mono">scroll</span>
     </div>
   </section>
 
-  <!-- ==================== ABOUT (breve) ==================== -->
-  <section id="about">
-    <h2 class="section-title reveal">Sobre mí</h2>
-    <div class="about__compact reveal reveal-delay-1">
-      <p class="about__text">
-        Ingeniero Informático con especialización en <strong>Sistemas Inteligentes</strong> y sólida base en
-        desarrollo de software. Combino experiencia en entornos corporativos con trabajo en proyectos de
-        <strong>Inteligencia Artificial aplicada</strong>, integrando rigor técnico con orientación a resultados.
-      </p>
-      <p class="about__text" style="margin-top:0.75rem;">
-        He participado en el diseño e implementación de soluciones que conectan ingeniería de software y modelos
-        de aprendizaje automático, buscando siempre <strong>impacto real, eficiencia y escalabilidad</strong>.
-      </p>
-      <p class="about__text" style="margin-top:0.75rem;">
-        Enfocado en construir sistemas donde la tecnología no sea solo experimental, sino funcional, mantenible
-        y capaz de generar valor medible.
-      </p>
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="section">
+    <div class="section__header reveal">
+      <span class="section__number mono">01</span>
+      <h2 class="section__title">Sobre mí</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__text-col reveal reveal-delay-1">
+        <p class="about__lead">
+          Enfocado en construir sistemas donde la tecnología no sea solo experimental, sino funcional, mantenible y
+          capaz de generar valor medible.
+
+        </p>
+        <p class="about__body">
+          Ingeniero Informático con especialización en Sistemas Inteligentes y sólida base en desarrollo de software.
+          Combino experiencia en entornos corporativos con trabajo en proyectos de Inteligencia Artificial aplicada,
+          integrando rigor técnico con orientación a resultados.
+        </p>
+        <p class="about__body">
+          He participado en el diseño e implementación de soluciones que conectan ingeniería de software y modelos de
+          aprendizaje automático, buscando siempre impacto real, eficiencia y escalabilidad.
+        </p>
+        </p>
+
+      </div>
+
+      <div class="about__cards-col reveal reveal-delay-2">
+        <div class="about__info-card glass-card">
+          <div class="about__info-icon"></div>
+          <div>
+            <div class="about__info-label">Formación</div>
+            <div class="about__info-value">Ing. Informática - Mención en Computación</div>
+            <div class="about__info-sub">Universidad de Murcia · 2025</div>
+          </div>
+        </div>
+        <div class="about__info-card glass-card">
+          <div class="about__info-icon"></div>
+          <div>
+            <div class="about__info-label">Rol actual</div>
+            <div class="about__info-value">Ingeniero de Software</div>
+            <div class="about__info-sub">DIM Tech 3D · IA aplicada a manufactura</div>
+          </div>
+        </div>
+        <div class="about__info-card glass-card">
+          <div class="about__info-icon"></div>
+          <div>
+            <div class="about__info-label">Ubicación</div>
+            <div class="about__info-value">Murcia, España</div>
+            <div class="about__info-sub">Open to remote / relocation</div>
+          </div>
+        </div>
+        <div class="about__info-card glass-card">
+          <div class="about__info-icon"></div>
+          <div>
+            <div class="about__info-label">Idiomas</div>
+            <div class="about__info-value about__langs-list">
+              <span>🇪🇸 Español — Nativo</span>
+              <span>🇬🇧 Inglés — B2 (FCE) </span>
+              <span>🇷🇺 Ruso — Básico</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ==================== PROJECTS (protagonista) ==================== -->
-  <section id="projects">
-    <h2 class="section-title reveal">Proyectos</h2>
-    <p class="section-subtitle reveal reveal-delay-1">Cada proyecto presenta un problema real, la solución técnica
-      implementada y las tecnologías utilizadas.</p>
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" class="section">
+    <div class="section__header reveal">
+      <span class="section__number mono">02</span>
+      <h2 class="section__title">Proyectos</h2>
+    </div>
+    <p class="section__subtitle reveal reveal-delay-1">Cada proyecto aborda un problema real con una solución técnica
+      concreta.</p>
 
     <div class="projects__list">
 
-      <!-- ===== 1 — Aprendizaje Federado ===== -->
-      <article class="project-full glass-card reveal">
-        <div class="project-full__header">
-          <div class="project-card__icon">🤖</div>
-          <div>
-            <h3 class="project-full__title">Predicción de Consumo Energético con Aprendizaje Federado</h3>
-            <span class="project-full__type">Trabajo Fin de Grado</span>
+      <!-- ===== 1  Aprendizaje Federado ===== -->
+      <article class="project-case glass-card reveal">
+        <div class="project-case__num mono">01</div>
+        <div class="project-case__content">
+          <div class="project-case__meta">
+            <span class="project-case__type">Trabajo Fin de Grado</span>
+            <div class="project-case__tags">
+              <span class="tag">Python</span>
+              <span class="tag tag--cyan">TensorFlow</span>
+              <span class="tag tag--violet">Federated Learning</span>
+              <span class="tag">LSTM</span>
+              <span class="tag">Transformer</span>
+            </div>
           </div>
-        </div>
-
-        <div class="project-full__body">
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">🔍 El Problema</h4>
-            <p>Los modelos de predicción de consumo energético requieren grandes volúmenes de datos de usuarios, pero
-              compartir estos datos entre organizaciones compromete la <strong>privacidad</strong> y vulnera
-              regulaciones
-              como el GDPR. ¿Cómo entrenar un modelo preciso sin centralizar datos sensibles?</p>
+          <h3 class="project-case__title">Predicción de Consumo Energético con Aprendizaje Federado</h3>
+          <div class="project-case__problem">
+            <span class="project-case__label">Problema</span>
+            <p>Los modelos de predicción energética requieren grandes volúmenes de datos, pero compartirlos
+              comprometería la privacidad y vulneraría el GDPR. ¿Cómo entrenar un modelo preciso sin centralizar datos
+              sensibles?</p>
           </div>
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">💡 La Solución</h4>
-            <p>Diseñé un sistema de <strong>aprendizaje federado para un edificio inteligente real</strong> donde múltiples nodos entrenan modelos
-              y solo comparten los pesos del modelo (no los datos). Implementé arquitecturas de deep
-              learning — <strong>LSTM</strong>, <strong>ConvLSTM2D</strong> y <strong>Transformer</strong> —
-              comparando su rendimiento con el enfoque de entrenamiento clásico centralizado, analizando trade-offs
-              entre precisión, privacidad y coste computacional.</p>
+          <div class="project-case__solution">
+            <span class="project-case__label">Solución</span>
+            <p>Sistema de <strong>aprendizaje federado</strong> para un <strong>edificio inteligente real</strong>:
+              múltiples nodos
+              entrenan localmente y solo comparten los pesos. Implementé y comparé arquitecturas <strong>LSTM,
+                ConvLSTM2D y Transformer</strong> analizando el trade-off precisión/privacidad/coste comparado con un
+              enfoque de entrenamiento centralizado.</p>
           </div>
-
-          <div class="project-full__tags">
-            <span class="tag">Python</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag tag--green">Federated Learning</span>
-            <span class="tag tag--pink">LSTM</span>
-            <span class="tag">ConvLSTM2D</span>
-            <span class="tag tag--green">Transformer</span>
-          </div>
-          <div class="project-images-grid">
-            <img src="cosas/tfg22222.png" class="project-full__image" loading="lazy">
-            <img src="cosas/TFG111.png" class="project-full__image" loading="lazy">
+          <div class="project-case__images">
+            <img src="cosas/tfg22222.png" class="project-case__img" loading="lazy" alt="Resultado TFG">
+            <img src="cosas/TFG111.png" class="project-case__img" loading="lazy" alt="Arquitectura TFG">
           </div>
         </div>
       </article>
 
-
-      <!-- ===== 2 — IA para Videojuegos ===== -->
-      <article class="project-full glass-card reveal">
-        <div class="project-full__header">
-          <div class="project-card__icon">🎮</div>
-          <div>
-            <h3 class="project-full__title">Inteligencia Artificial para Videojuegos</h3>
-            <span class="project-full__type">Proyecto Académico — Unity / C#</span>
+      <!-- ===== 2  IA Videojuegos ===== -->
+      <article class="project-case glass-card reveal">
+        <div class="project-case__num mono">02</div>
+        <div class="project-case__content">
+          <div class="project-case__meta">
+            <span class="project-case__type">Proyecto Unity / C#</span>
+            <div class="project-case__tags">
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag tag--cyan">Steering Behaviors</span>
+              <span class="tag tag--pink">Pathfinding</span>
+              <span class="tag">Behavior Trees</span>
+            </div>
           </div>
-        </div>
-
-        <div class="project-full__body">
-          <div class="project-full__block">
-            <h4 class="project-full__label">🔍 El Problema</h4>
-            <p>Los NPCs (personajes no jugador) en videojuegos suelen comportarse de forma predecible y torpe:
-              siguen rutas fijas, no reaccionan al entorno y rompen la inmersión del jugador. ¿Cómo lograr que los
-              NPCs se muevan de forma natural, tomen decisiones tácticas y se adapten al contexto del juego?</p>
+          <h3 class="project-case__title">Inteligencia Artificial para Videojuegos</h3>
+          <div class="project-case__problem">
+            <span class="project-case__label">Problema</span>
+            <p>Los NPCs tradicionales siguen rutas fijas y no reaccionan al entorno, rompiendo la inmersión. ¿Cómo
+              lograr movimiento natural y decisiones tácticas adaptativas en tiempo real?</p>
           </div>
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">💡 La Solución</h4>
-            <p>Implementé un sistema de IA modular en dos partes: la primera centrada en <strong>steering
-                behaviors</strong>
-              (seek, flee, wander, pursuit, evasion, obstacle avoidance) para movimiento natural de NPCs; la segunda
-              en <strong>pathfinding táctico</strong> con influencemap y toma de decisiones en tiempo real mediante
-              árboles de comportamiento, permitiendo a los NPCs evaluar amenazas, elegir rutas seguras y
-              coordinar acciones de grupo.</p>
+          <div class="project-case__solution">
+            <span class="project-case__label">Solución</span>
+            <p>Sistema de IA modular: <strong>steering behaviors</strong> (seek, flee, wander, evasion, obstacle
+              avoidance) para movimiento fluido, más <strong>pathfinding táctico</strong> con influence maps y árboles
+              de comportamiento para toma de decisiones en tiempo real.</p>
           </div>
-
-          <div class="project-full__tags">
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag tag--green">Steering Behaviors</span>
-            <span class="tag tag--pink">Pathfinding</span>
-            <span class="tag">Behavior Trees</span>
-            <span class="tag tag--green">Influence Maps</span>
-          </div>
-          <div class="project-images-grid">
-            <img src="cosas/IADJ1.png" class="project-full__image fit-cover" loading="lazy">
-            <img src="cosas/IADJ2.png" class="project-full__image fit-cover" loading="lazy">
+          <div class="project-case__images">
+            <img src="cosas/IADJ1.png" class="project-case__img project-case__img--cover" loading="lazy"
+              alt="IA Videojuegos 1">
+            <img src="cosas/IADJ2.png" class="project-case__img project-case__img--cover" loading="lazy"
+              alt="IA Videojuegos 2">
           </div>
         </div>
       </article>
 
-      <!-- ===== 3 — Visión Artificial ===== -->
-      <article class="project-full glass-card reveal">
-        <div class="project-full__header">
-          <div class="project-card__icon">👁️</div>
-          <div>
-            <h3 class="project-full__title">Visión Artificial e Inteligencia Artificial</h3>
-            <span class="project-full__type">Proyecto Académico — OpenCV / Python</span>
+      <!-- ===== 3  Visión Artificial ===== -->
+      <article class="project-case glass-card reveal">
+        <div class="project-case__num mono">03</div>
+        <div class="project-case__content">
+          <div class="project-case__meta">
+            <span class="project-case__type">Proyecto OpenCV / Python</span>
+            <div class="project-case__tags">
+              <span class="tag">Python</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag tag--cyan">Jupyter</span>
+              <span class="tag tag--pink">Segmentación</span>
+              <span class="tag">Machine Learning</span>
+            </div>
           </div>
-        </div>
-
-        <div class="project-full__body">
-          <div class="project-full__block">
-            <h4 class="project-full__label">🔍 El Problema</h4>
-            <p>¿Cómo hacer que una máquina "vea" y entienda imágenes? Desde detectar bordes y formas hasta clasificar
-              objetos complejos, los retos de visión por computador requieren combinar matemáticas (convoluciones,
-              transformadas de Fourier) con técnicas de machine learning.</p>
+          <h3 class="project-case__title">Visión Artificial e Inteligencia Artificial</h3>
+          <div class="project-case__problem">
+            <span class="project-case__label">Problema</span>
+            <p>¿Cómo hacer que una máquina "vea" y entienda imágenes? Desde bordes y formas hasta clasificación de
+              objetos complejos, el reto requiere combinar matemáticas con machine learning.</p>
           </div>
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">💡 La Solución</h4>
-            <p>Desarrollé 6 entregas incrementales: <strong>procesamiento de imagen</strong> (filtros espaciales y
-              frecuenciales, histogramas), <strong>segmentación</strong> (umbralización, watershed, Otsu),
-              <strong>detección de bordes</strong> (Canny, Sobel, Laplaciano), <strong>operaciones morfológicas</strong>
-              (erosión, dilatación, opening/closing), <strong>detección de patrones</strong> (template matching,
-              Hough transform) y <strong>clasificación de imágenes</strong> con técnicas de machine learning.
+          <div class="project-case__solution">
+            <span class="project-case__label">Solución</span>
+            <p>Implementación progresiva de algoritmos: <strong>filtros espaciales y frecuenciales</strong>,
+              <strong>segmentación</strong> (Otsu, watershed), <strong>detección de bordes</strong> (Canny, Sobel),
+              <strong>morfología</strong>, <strong>detección de patrones</strong> (Hough, template matching) y
+              <strong>clasificación ML</strong>.
             </p>
           </div>
-
-          <div class="project-full__tags">
-            <span class="tag">Python</span>
-            <span class="tag">OpenCV</span>
-            <span class="tag tag--green">Jupyter Notebooks</span>
-            <span class="tag tag--pink">Segmentación</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag tag--green">Fourier</span>
-          </div>
-
-          <div class="project-images-grid">
-            <img src="cosas/nariz.png" class="project-full__image fit-cover" loading="lazy">
-            <img src="cosas/similitud.png" class="project-full__image fit-cover" loading="lazy">
+          <div class="project-case__images">
+            <img src="cosas/nariz.png" class="project-case__img project-case__img--cover" loading="lazy"
+              alt="Vision Artificial 1">
+            <img src="cosas/similitud.png" class="project-case__img project-case__img--cover" loading="lazy"
+              alt="Vision Artificial 2">
           </div>
         </div>
       </article>
 
-      <!-- ===== 4 — Compresor JPEG ===== -->
-      <article class="project-full glass-card reveal">
-        <div class="project-full__header">
-          <div class="project-card__icon">🖼️</div>
-          <div>
-            <h3 class="project-full__title">Compresor de Imágenes JPEG</h3>
-            <span class="project-full__type">Proyecto Académico — Python</span>
+      <!-- ===== 4  Compresor JPEG ===== -->
+      <article class="project-case glass-card reveal">
+        <div class="project-case__num mono">04</div>
+        <div class="project-case__content">
+          <div class="project-case__meta">
+            <span class="project-case__type">Proyecto Python</span>
+            <div class="project-case__tags">
+              <span class="tag">Python</span>
+              <span class="tag tag--cyan">DCT</span>
+              <span class="tag tag--pink">Huffman</span>
+              <span class="tag">Procesamiento de Señales</span>
+              <span class="tag">YCbCr</span>
+            </div>
           </div>
-        </div>
-
-        <div class="project-full__body">
-          <div class="project-full__block">
-            <h4 class="project-full__label">🔍 El Problema</h4>
-            <p>Las imágenes digitales en formato raw ocupan enormes cantidades de espacio. El estándar JPEG consigue
-              comprimir imágenes reduciendo su tamaño hasta un 90% con pérdida visual mínima. Pero, ¿cómo funciona
-              internamente? ¿Qué matemáticas hay detrás de esa "magia"?</p>
+          <h3 class="project-case__title">Compresor y Descompresor de Imágenes JPEG desde cero</h3>
+          <div class="project-case__problem">
+            <span class="project-case__label">Problema</span>
+            <p>Las imágenes raw ocupan enormes cantidades de espacio. El estándar JPEG comprime hasta un 90% con pérdida
+              visual mínima. ¿Qué matemáticas hay detrás?</p>
           </div>
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">💡 La Solución</h4>
-            <p>Implementé el pipeline completo de compresión JPEG: conversión de espacio de color (<strong>RGB →
-                YCbCr</strong>),
-              subdivisión en bloques 8×8, aplicación de la <strong>Transformada Discreta del Coseno (DCT)</strong> para
-              separar frecuencias, <strong>cuantización</strong> con matrices estándar para descartar información
-              imperceptible, y <strong>codificación Huffman</strong> para la compresión final sin pérdidas del resultado
-              cuantizado.</p>
+          <div class="project-case__solution">
+            <span class="project-case__label">Solución</span>
+            <p>Pipeline completo: conversión <strong>RGB YCbCr</strong>, subdivisión en bloques 88, <strong>DCT</strong>
+              para separar frecuencias, <strong>cuantización</strong> con matrices estándar y <strong>codificación
+                Huffman</strong> para la entropía final.</p>
           </div>
-
-          <div class="project-full__tags">
-            <span class="tag">Python</span>
-            <span class="tag tag--green">DCT</span>
-            <span class="tag tag--pink">Huffman</span>
-            <span class="tag">Procesamiento de Señales</span>
-            <span class="tag tag--green">YCbCr</span>
-          </div>
-          <div class="project-images-grid">
-            <img src="cosas/Img06.bmp" class="project-full__image fit-cover" loading="lazy">
-            <img src="cosas/Img06FC200_des_def.bmp" class="project-full__image fit-cover" loading="lazy">
+          <div class="project-case__images">
+            <img src="cosas/Img06.bmp" class="project-case__img project-case__img--cover" loading="lazy" alt="Original">
+            <img src="cosas/Img06FC200_des_def.bmp" class="project-case__img project-case__img--cover" loading="lazy"
+              alt="Comprimida">
           </div>
         </div>
       </article>
 
-      <!-- ===== 5 — Credit Approval ===== -->
-      <article class="project-full glass-card reveal">
-        <div class="project-full__header">
-          <div class="project-card__icon">📊</div>
-          <div>
-            <h3 class="project-full__title">Clasificación Predictiva — Credit Approval</h3>
-            <span class="project-full__type">Proyecto Académico — R</span>
+      <!-- ===== 5  Credit Approval ===== -->
+      <article class="project-case glass-card reveal">
+        <div class="project-case__num mono">05</div>
+        <div class="project-case__content">
+          <div class="project-case__meta">
+            <span class="project-case__type">Proyecto R</span>
+            <div class="project-case__tags">
+              <span class="tag">R</span>
+              <span class="tag tag--cyan">Machine Learning</span>
+              <span class="tag tag--pink">Estadística</span>
+              <span class="tag">Cross-Validation</span>
+              <span class="tag">AUC-ROC</span>
+            </div>
           </div>
-        </div>
-
-        <div class="project-full__body">
-          <div class="project-full__block">
-            <h4 class="project-full__label">🔍 El Problema</h4>
-            <p>¿Cómo puede un banco decidir automáticamente si aprobar o rechazar una solicitud de crédito? El dataset
-              UCI Credit Approval contiene datos reales (anonimizados) con valores faltantes, variables categóricas y
-              numéricas mezcladas, y clases desbalanceadas — un escenario típico de producción.</p>
+          <h3 class="project-case__title">Clasificación Predictiva Credit Approval</h3>
+          <div class="project-case__problem">
+            <span class="project-case__label">Problema</span>
+            <p>¿Cómo decide un banco automáticamente si aprobar una solicitud de crédito? Dataset UCI con valores
+              faltantes, variables mixtas y clases desbalanceadas escenario real de producción.</p>
           </div>
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">💡 La Solución</h4>
-            <p>Desarrollé un pipeline completo de machine learning en R: <strong>limpieza y imputación</strong> de datos
-              faltantes, <strong>análisis exploratorio</strong> visual, <strong>ingeniería de features</strong>,
-              entrenamiento y comparación de múltiples modelos (regresión logística, árboles de decisión, SVM, random
-              forest), con <strong>ajuste de hiperparámetros</strong> mediante validación cruzada y evaluación final con
-              métricas de precisión, recall y AUC-ROC.</p>
-          </div>
-
-          <div class="project-full__tags">
-            <span class="tag">R</span>
-            <span class="tag tag--green">Machine Learning</span>
-            <span class="tag tag--pink">Estadística</span>
-            <span class="tag">Cross-Validation</span>
-            <span class="tag tag--green">AUC-ROC</span>
+          <div class="project-case__solution">
+            <span class="project-case__label">Solución</span>
+            <p>Pipeline completo en R: <strong>imputación y limpieza</strong>, análisis exploratorio, <strong>ingeniería
+                de features</strong>, comparativa de modelos (regresión logística, árboles, SVM, random forest) con
+              <strong>ajuste de hiperparámetros</strong> y evaluación por AUC-ROC.
+            </p>
           </div>
         </div>
       </article>
 
-      <!-- ===== 6 — SBR Mitología Griega ===== -->
-      <article class="project-full glass-card reveal">
-        <div class="project-full__header">
-          <div class="project-card__icon">⚡</div>
-          <div>
-            <h3 class="project-full__title">Sistema Basado en Reglas — Mitología Griega</h3>
-            <span class="project-full__type">Proyecto Académico — Java / Drools</span>
+      <!-- ===== 6  SBR Mitología Griega ===== -->
+      <article class="project-case glass-card reveal">
+        <div class="project-case__num mono">06</div>
+        <div class="project-case__content">
+          <div class="project-case__meta">
+            <span class="project-case__type">Proyecto Java / Drools</span>
+            <div class="project-case__tags">
+              <span class="tag">Java</span>
+              <span class="tag">Drools</span>
+              <span class="tag tag--cyan">Sistemas Expertos</span>
+              <span class="tag tag--pink">Inferencia Lógica</span>
+            </div>
           </div>
-        </div>
-
-        <div class="project-full__body">
-          <div class="project-full__block">
-            <h4 class="project-full__label">🔍 El Problema</h4>
-            <p>La mitología griega forma un grafo de relaciones enormemente complejo: dioses, titanes, semidioses,
-              linajes, dominios y conflictos interconectados. ¿Cómo representar ese conocimiento de forma que un
-              sistema pueda razonar sobre él, inferir nuevos hechos y responder consultas complejas?</p>
+          <h3 class="project-case__title">Sistema Experto Mitología Griega</h3>
+          <div class="project-case__problem">
+            <span class="project-case__label">Problema</span>
+            <p>La mitología griega forma un grafo enormemente complejo: dioses, titanes, linajes y conflictos. ¿Cómo
+              representar ese conocimiento para que un sistema pueda razonar e inferir hechos nuevos?</p>
           </div>
-
-          <div class="project-full__block">
-            <h4 class="project-full__label">💡 La Solución</h4>
-            <p>Construí un <strong>sistema experto</strong> con Java y el motor de reglas <strong>Drools</strong>:
-              modelé la base de hechos (dioses, relaciones de parentesco, dominios) como objetos Java y definí reglas
-              declarativas para <strong>inferencia lógica</strong> — derivando automáticamente relaciones familiares
-              transitivas, conflictos entre dioses y clasificaciones jerárquicas que no estaban explícitas en los hechos
-              iniciales.</p>
-          </div>
-
-          <div class="project-full__tags">
-            <span class="tag">Java</span>
-            <span class="tag">Drools</span>
-            <span class="tag tag--green">Sistemas Expertos</span>
-            <span class="tag tag--pink">Inferencia Lógica</span>
-            <span class="tag">Reglas Declarativas</span>
+          <div class="project-case__solution">
+            <span class="project-case__label">Solución</span>
+            <p>Sistema experto con <strong>Java + Drools</strong>: base de hechos modelada como objetos Java y reglas
+              declarativas para <strong>inferencia lógica transitiva</strong> derivando automáticamente relaciones
+              familiares, conflictos y jerarquías no explícitas en los hechos iniciales.</p>
           </div>
         </div>
       </article>
-
-
-
 
     </div>
   </section>
 
-  <!-- ==================== TRAYECTORIA (compacto) ==================== -->
-  <section id="experience">
-    <h2 class="section-title reveal">Trayectoria</h2>
-    <div class="trajectory reveal reveal-delay-1">
+  <!-- ==================== TRAYECTORIA ==================== -->
+  <section id="experience" class="section">
+    <div class="section__header reveal">
+      <span class="section__number mono">03</span>
+      <h2 class="section__title">Trayectoria</h2>
+    </div>
 
-      <div class="glass-card trajectory__card">
-        <span class="trajectory__date">ene 2026 — actual</span>
-        <h3 class="trajectory__title">Ingeniero de Software</h3>
-        <p class="trajectory__place">DIM Tech 3D · Jornada completa</p>
-        <p class="trajectory__desc">Desarrollador de software en proyecto confidencial de I+D en IA aplicada a
-          manufactura avanzada. Diseño e implementación de servicios backend y APIs, participando en sistemas de
-          optimización, modelos inteligentes e integración con entornos productivos. Trabajo en arquitectura modular
-          orientada a escalabilidad y trazabilidad de procesos.</p>
-      </div>
+    <div class="timeline">
 
-      <div class="glass-card trajectory__card">
-        <span class="trajectory__date">ene 2023 — may 2023</span>
-        <h3 class="trajectory__title">Prácticas Ingeniero de Software</h3>
-        <p class="trajectory__place">Upango · Híbrido</p>
-        <p class="trajectory__desc">Diseño de base de datos relacional para gestión de clientes, ventas y reservas.
-          Lógica de negocio en .NET con C# integrada con la web corporativa.</p>
-      </div>
-
-      <div class="glass-card trajectory__card">
-        <span class="trajectory__date">sept 2019 — jul 2025</span>
-        <h3 class="trajectory__title">Grado en Ingeniería Informática</h3>
-        <p class="trajectory__place">Universidad de Murcia · Mención en Computación</p>
-        <span class="edu-card__grade">📈 Media: 7.0</span>
-      </div>
-
-      <div class="glass-card trajectory__card">
-        <span class="trajectory__date">sept 2017 — may 2019</span>
-        <h3 class="trajectory__title">Bachillerato de Ciencias Puras</h3>
-        <p class="trajectory__place">Instituto Jesús-María Alfonso X</p>
-        <span class="edu-card__grade">📈 Media: 8.75</span>
-      </div>
-
-      <div class="glass-card trajectory__card">
-        <span class="trajectory__date">sept 2018</span>
-        <h3 class="trajectory__title">First Certificate in English (B2)</h3>
-        <p class="trajectory__place">University of Cambridge</p>
-      </div>
-
-      <div class="glass-card trajectory__card trajectory__card--langs">
-        <h3 class="trajectory__title">Idiomas</h3>
-        <div class="lang-mini">
-          <span>🇪🇸 Español — Nativo</span>
-          <span>🇬🇧 Inglés — B2 FCE</span>
-          <span>🇷🇺 Ruso — Básico</span>
+      <div class="timeline__item reveal">
+        <div class="timeline__marker">
+          <div class="timeline__dot timeline__dot--active"></div>
+        </div>
+        <div class="timeline__body glass-card">
+          <span class="timeline__date mono">ene 2026 — actual</span>
+          <h3 class="timeline__role">Ingeniero de Software</h3>
+          <p class="timeline__company">DIM Tech 3D <span class="timeline__badge timeline__badge--active">Jornada
+              completa</span></p>
+          <p class="timeline__desc">Desarrollador en proyecto confidencial de I+D en IA aplicada a manufactura avanzada.
+            Diseño e implementación de servicios backend y APIs, sistemas de optimización, modelos inteligentes e
+            integración con entornos productivos. Arquitectura modular orientada a escalabilidad y trazabilidad.</p>
         </div>
       </div>
+
+      <div class="timeline__item reveal reveal-delay-1">
+        <div class="timeline__marker">
+          <div class="timeline__dot"></div>
+        </div>
+        <div class="timeline__body glass-card">
+          <span class="timeline__date mono">ene 2023 — may 2023</span>
+          <h3 class="timeline__role">Prácticas Ing. de Software</h3>
+          <p class="timeline__company">Upango <span class="timeline__badge">Híbrido</span></p>
+          <p class="timeline__desc">Diseño de base de datos relacional para gestión de clientes, ventas y reservas.
+            Lógica de negocio en .NET con C# integrada con la web corporativa.</p>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal reveal-delay-2">
+        <div class="timeline__marker">
+          <div class="timeline__dot timeline__dot--edu"></div>
+        </div>
+        <div class="timeline__body glass-card">
+          <span class="timeline__date mono">sept 2019 — jul 2025</span>
+          <h3 class="timeline__role">Grado en Ingeniería Informática</h3>
+          <p class="timeline__company">Universidad de Murcia <span class="timeline__badge timeline__badge--edu">Mención
+              Computación</span></p>
+          <p class="timeline__desc">Mención en Sistemas Inteligentes. </p>
+          <span class="timeline__grade">Media: 7.0</span>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal reveal-delay-3">
+        <div class="timeline__marker">
+          <div class="timeline__dot timeline__dot--edu"></div>
+        </div>
+        <div class="timeline__body glass-card">
+          <span class="timeline__date mono">sept 2017 — may 2019</span>
+          <h3 class="timeline__role">Bachillerato de Ciencias Puras</h3>
+          <p class="timeline__company">Instituto Jesús-María Alfonso X el Sabio</p>
+          <span class="timeline__grade">Media: 8.75</span>
+        </div>
+      </div>
+
+
 
     </div>
   </section>
 
   <!-- ==================== CONTACT ==================== -->
-  <section id="contact">
-    <h2 class="section-title reveal">Contacto</h2>
-    <div class="contact__grid">
-      <a href="mailto:jddhernandezk@gmail.com" class="glass-card contact-card reveal reveal-delay-1">
-        <div class="contact-card__icon">✉️</div>
-        <div>
-          <div class="contact-card__label">Email</div>
-          <div class="contact-card__value">jddhernandezk@gmail.com</div>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/juandedioshk/" target="_blank" rel="noopener"
-        class="glass-card contact-card reveal reveal-delay-2">
-        <div class="contact-card__icon">🔗</div>
-        <div>
-          <div class="contact-card__label">LinkedIn</div>
-          <div class="contact-card__value">linkedin.com/in/juandedioshk</div>
-        </div>
-      </a>
-      <a href="https://github.com/JuandeHK" target="_blank" rel="noopener"
-        class="glass-card contact-card reveal reveal-delay-3">
-        <div class="contact-card__icon">💻</div>
-        <div>
-          <div class="contact-card__label">GitHub</div>
-          <div class="contact-card__value">github.com/JuandeHK</div>
-        </div>
-      </a>
-      <div class="glass-card contact-card reveal reveal-delay-4">
-        <div class="contact-card__icon">📍</div>
-        <div>
-          <div class="contact-card__label">Ubicación</div>
-          <div class="contact-card__value">Murcia, España</div>
+  <section id="contact" class="section">
+    <div class="section__header reveal">
+      <span class="section__number mono">04</span>
+      <h2 class="section__title">Contacto</h2>
+    </div>
+
+    <div class="contact__wrapper reveal reveal-delay-1">
+
+      <div class="contact__grid">
+        <a href="mailto:jddhernandezk@gmail.com" class="contact-item glass-card">
+          <div class="contact-item__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item__info">
+            <span class="contact-item__label">Email</span>
+            <span class="contact-item__value">jddhernandezk@gmail.com</span>
+          </div>
+          <span class="contact-item__arrow"></span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/juandedioshk/" target="_blank" rel="noopener"
+          class="contact-item glass-card">
+          <div class="contact-item__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </div>
+          <div class="contact-item__info">
+            <span class="contact-item__label">LinkedIn</span>
+            <span class="contact-item__value">Juan de Dios</span>
+          </div>
+          <span class="contact-item__arrow"></span>
+        </a>
+
+        <a href="https://github.com/JuandeHK" target="_blank" rel="noopener" class="contact-item glass-card">
+          <div class="contact-item__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
+          </div>
+          <div class="contact-item__info">
+            <span class="contact-item__label">GitHub</span>
+            <span class="contact-item__value">JuandeHK</span>
+          </div>
+          <span class="contact-item__arrow"></span>
+        </a>
+
+        <div class="contact-item glass-card contact-item--location">
+          <div class="contact-item__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+          </div>
+          <div class="contact-item__info">
+            <span class="contact-item__label">Ubicación</span>
+            <span class="contact-item__value">Murcia, España</span>
+          </div>
         </div>
       </div>
     </div>
@@ -433,7 +518,11 @@
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="footer__inner">
-      <p>© 2025 Juan de Dios Hernández Kakauridze — Ingeniero Informático UMU</p>
+      <span class="footer__name">Juan de Dios Hernández Kakauridze</span>
+      <span class="footer__sep">·</span>
+      <span class="footer__copy"> 2026</span>
+      <span class="footer__sep">·</span>
+      <span class="footer__role mono">Computer Engineer</span>
     </div>
   </footer>
 

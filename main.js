@@ -1,139 +1,130 @@
-/* ============================================================
-   PORTFOLIO — Juan de Dios Hernández Kakauridze
-   Main JavaScript: Theme, Scroll, Navigation, Visual Effects
+﻿/* ============================================================
+   PORTFOLIO -- Juan de Dios Hernandez Kakauridze
+   Main JS: Navbar, Scroll reveal, Mouse spotlight, Animations
    ============================================================ */
-
 (function () {
   'use strict';
 
+  // ---------- Navbar pill scroll state ----------
+  const header = document.getElementById('siteHeader');
+  const navbar = header?.querySelector('.navbar');
 
+  window.addEventListener('scroll', () => {
+    if (navbar) {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }
+  }, { passive: true });
 
-  // ---------- Mobile Menu ----------
-  const burger = document.getElementById('navBurger');
-  const navLinks = document.getElementById('navLinks');
-
-  if (burger && navLinks) {
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      burger.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
-    });
-
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        burger.textContent = '☰';
-      });
-    });
-  }
-
-  // ---------- Active Nav Link on Scroll ----------
+  // ---------- Active nav link ----------
   const sections = document.querySelectorAll('section[id]');
 
   function highlightNav() {
-    const scrollY = window.scrollY + 120;
-    sections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
+    const y = window.scrollY + 120;
+    sections.forEach((sec) => {
+      const id  = sec.getAttribute('id');
+      const top = sec.offsetTop;
+      const bot = top + sec.offsetHeight;
       const link = document.querySelector(`.navbar__links a[href="#${id}"]`);
-      if (link) {
-        if (scrollY >= top && scrollY < top + height) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      }
+      if (link) link.classList.toggle('active', y >= top && y < bot);
     });
   }
 
   window.addEventListener('scroll', highlightNav, { passive: true });
   highlightNav();
 
-  // ---------- Scroll Reveal ----------
-  const reveals = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
+  // ---------- Mobile burger ----------
+  const burger   = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
+
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      const spans = burger.querySelectorAll('span');
+      if (open) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity   = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+      }
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
       });
-    },
-    { threshold: 0.12 }
+    });
+  }
+
+  // ---------- Scroll reveal ----------
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }),
+    { threshold: 0.1 }
   );
+  reveals.forEach(el => io.observe(el));
 
-  reveals.forEach((el) => revealObserver.observe(el));
-
-  // ---------- Mouse-Tracking Spotlight on Cards ----------
-  const cards = document.querySelectorAll('.glass-card');
-
-  cards.forEach((card) => {
+  // ---------- Mouse spotlight on glass cards ----------
+  document.querySelectorAll('.glass-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', x + 'px');
-      card.style.setProperty('--mouse-y', y + 'px');
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top)  + 'px');
     });
   });
 
-  // ---------- Typing Effect on Hero Subtitle ----------
-  const subtitle = document.querySelector('.hero__subtitle');
-  if (subtitle) {
-    const text = subtitle.textContent;
-    subtitle.textContent = '';
-    subtitle.style.borderRight = '2px solid var(--accent-1)';
-    subtitle.style.animation = 'none';
+  // ---------- Typing effect on hero role text ----------
+  const roleText = document.querySelector('.hero__role-text');
+  if (roleText) {
+    const fullText = roleText.textContent.trim();
+    roleText.textContent = '';
+
+    const cursor = document.createElement('span');
+    cursor.style.cssText = 'border-right:2px solid var(--violet);animation:blink 0.8s step-end infinite;margin-left:1px;';
+    roleText.parentNode.appendChild(cursor);
+
+    const style = document.createElement('style');
+    style.textContent = '@keyframes blink{0%,100%{border-color:var(--violet)}50%{border-color:transparent}}';
+    document.head.appendChild(style);
+
     let i = 0;
-    const typeSpeed = 45;
+    const speed = 50;
 
-    function typeChar() {
-      if (i < text.length) {
-        subtitle.textContent += text.charAt(i);
+    setTimeout(function type() {
+      if (i <= fullText.length) {
+        roleText.textContent = fullText.slice(0, i);
         i++;
-        setTimeout(typeChar, typeSpeed);
-      } else {
-        // Blink cursor then remove it
-        let blinks = 0;
-        const blinkInterval = setInterval(() => {
-          subtitle.style.borderRightColor =
-            subtitle.style.borderRightColor === 'transparent' ?
-              'var(--accent-1)' : 'transparent';
-
-        }, 400);
+        setTimeout(type, speed);
       }
-    }
-
-    // Start typing when hero becomes visible
-    const heroObserver = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setTimeout(typeChar, 600);
-          heroObserver.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-    heroObserver.observe(subtitle.closest('.hero'));
+    }, 800);
   }
 
-  // ---------- Navbar Hide/Show on Scroll ----------
-  let lastScroll = 0;
-  const navbar = document.getElementById('navbar');
+  // ---------- Counter animation on hero stats ----------
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      statsObserver.unobserve(el);
 
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 100) {
-      if (currentScroll > lastScroll) {
-        navbar.style.transform = 'translateY(-100%)';
-      } else {
-        navbar.style.transform = 'translateY(0)';
-      }
-    } else {
-      navbar.style.transform = 'translateY(0)';
-    }
-    lastScroll = currentScroll;
-  }, { passive: true });
+      const raw = el.getAttribute('data-target');
+      if (!raw) return;
+
+      const endVal = parseInt(raw);
+      const suffix = el.textContent.replace(/[\d]/g, '') || '+';
+      let current = 0;
+      const step = Math.max(1, Math.floor(endVal / 30));
+
+      const interval = setInterval(() => {
+        current = Math.min(current + step, endVal);
+        el.textContent = current + suffix;
+        if (current >= endVal) clearInterval(interval);
+      }, 40);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.hero__stat-number[data-target]').forEach(el => statsObserver.observe(el));
 
 })();
