@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap');
+      .text {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 30px;
+        dominant-baseline: middle;
+        text-anchor: middle;
+      }
+      .mark { font-weight: 800; fill: url(#grad-main); }
+      .dD { font-weight: 700; fill: #f2f2f8; }
+      .accent { font-weight: 700; fill: url(#grad-main); }
+    </style>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="#080810" />
+  <text x="60" y="64" class="text">
+    <tspan class="mark">J</tspan><tspan class="dD">dD</tspan><tspan class="accent">HK</tspan>
+  </text>
+</svg>
