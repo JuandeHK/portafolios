@@ -1511,3 +1511,57 @@ h4 {
     padding-left: 1.75rem;
   }
 }
+
+/* ============================================================
+   EASTER EGG CR7
+   ============================================================ */
+.cr7-container {
+  position: fixed;
+  bottom: -200px;
+  right: 20px;
+  width: 150px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(0) scale(0.8);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.4s ease,
+    bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cr7-container.show {
+  bottom: 20px;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: cr7Jump 0.8s ease-in-out infinite alternate;
+}
+
+.cr7-container img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes cr7Jump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-40px) scale(1.05);
+    /* Jumps up 40px */
+  }
+}
+
+/* ============================================================
+   MAGNETIC BUTTONS & 3D CARDS
+   ============================================================ */
+.magnetic-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.btn {
+  will-change: transform;
+  transform-style: preserve-3d;
+}

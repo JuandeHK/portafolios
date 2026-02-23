@@ -21,7 +21,7 @@
   function highlightNav() {
     const y = window.scrollY + 120;
     sections.forEach((sec) => {
-      const id  = sec.getAttribute('id');
+      const id = sec.getAttribute('id');
       const top = sec.offsetTop;
       const bot = top + sec.offsetHeight;
       const link = document.querySelector(`.navbar__links a[href="#${id}"]`);
@@ -33,7 +33,7 @@
   highlightNav();
 
   // ---------- Mobile burger ----------
-  const burger   = document.getElementById('navBurger');
+  const burger = document.getElementById('navBurger');
   const navLinks = document.getElementById('navLinks');
 
   if (burger && navLinks) {
@@ -42,7 +42,7 @@
       const spans = burger.querySelectorAll('span');
       if (open) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity   = '0';
+        spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
       } else {
         spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
@@ -72,7 +72,7 @@
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();
       card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - r.top)  + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
   });
 
@@ -126,5 +126,57 @@
   }, { threshold: 0.5 });
 
   document.querySelectorAll('.hero__stat-number[data-target]').forEach(el => statsObserver.observe(el));
+
+  // ============================================================
+  // PREMIUM ANIMATIONS (3D Tilt, Magnetic Buttons, CR7 Easter Egg)
+  // ============================================================
+
+  // 1. CR7 Easter Egg (Keylogger)
+  let keysPressed = [];
+  const secretCode = ['c', 'r', '7'];
+  const cr7Container = document.getElementById('cr7-container');
+  let cr7Timer;
+
+  window.addEventListener('keydown', (e) => {
+    const key = e.key.toLowerCase();
+    keysPressed.push(key);
+
+    // Keep only the last 3 keys
+    if (keysPressed.length > secretCode.length) {
+      keysPressed.shift();
+    }
+
+    // Check if secret code is matched
+    if (keysPressed.join('') === secretCode.join('')) {
+      if (cr7Container) {
+        cr7Container.classList.add('show');
+
+        // Hide after 3.5 seconds
+        clearTimeout(cr7Timer);
+        cr7Timer = setTimeout(() => {
+          cr7Container.classList.remove('show');
+        }, 3500);
+      }
+      keysPressed = []; // Reset
+    }
+  });
+
+  // 3. Magnetic Buttons
+  const magneticBtns = document.querySelectorAll('.btn');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      // Move button towards cursor (intensity factor 0.3)
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      // Reset position smoothly
+      btn.style.transform = 'translate(0px, 0px)';
+    });
+  });
 
 })();
