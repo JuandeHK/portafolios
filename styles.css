@@ -1234,8 +1234,13 @@ h4 {
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact__wrapper {
+.contact__container {
   max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact__wrapper {
+  width: 100%;
 }
 
 .contact__headline {
